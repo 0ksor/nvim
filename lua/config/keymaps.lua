@@ -3,7 +3,7 @@
 -- Add any additional keymaps here
 vim.keymap.del("n", "s")
 local function toggle_true_false()
-  local _row, col = unpack(vim.api.nvim_win_get_cursor(0))
+  local _, col = unpack(vim.api.nvim_win_get_cursor(0))
   local line = vim.api.nvim_get_current_line()
 
   -- sütun bazlı kelime arama
@@ -30,3 +30,17 @@ local function toggle_true_false()
   vim.api.nvim_set_current_line(line)
 end
 vim.keymap.set("n", "ss", toggle_true_false, { noremap = true, silent = true })
+
+vim.keymap.set("n", "o", function()
+  local line = vim.api.nvim_get_current_line()
+  local row, _ = unpack(vim.api.nvim_win_get_cursor(0))
+
+  local brace_col = line:find("{")
+  if line:match("{%}") then
+    vim.api.nvim_win_set_cursor(0, { row, brace_col })
+    vim.cmd("startinsert")
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, true, true), "i", true)
+  else
+    vim.api.nvim_feedkeys("o", "n", false)
+  end
+end, { noremap = true, silent = true })
