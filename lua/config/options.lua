@@ -2,7 +2,7 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
-vim.kemap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "x", '"_x')
 vim.keymap.set("n", "X", '"_X')
 vim.opt.virtualedit = "all"
