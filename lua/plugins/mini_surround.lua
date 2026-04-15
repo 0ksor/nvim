@@ -13,7 +13,7 @@ return {
   end,
   opts = {
     mappings = {
-      add = "gsa", -- Add surrounding in Normal and Visual modes
+      add = "sa", -- Add surrounding in Normal and Visual modes
     },
   },
 }
