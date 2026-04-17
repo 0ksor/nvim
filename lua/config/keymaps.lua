@@ -39,3 +39,6 @@ vim.keymap.set("n", "o", function()
     vim.api.nvim_feedkeys("o", "n", false)
   end
 end, { noremap = true, silent = true })
+
+vim.keymap.set("n", "<A-o>", "o<Esc>", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-O>", "O<Esc>", { noremap = true, silent = true })
