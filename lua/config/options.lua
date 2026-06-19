@@ -9,3 +9,4 @@ vim.opt.virtualedit = "all"
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.sidescrolloff = 10
+vim.opt.scrolloff = 10
